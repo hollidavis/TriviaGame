@@ -5,7 +5,6 @@ function _draw() {
   let questions = ProxyState.questions
   let template = ''
   questions.forEach(q => template += q.Template)
-  console.log(template)
   document.getElementById('questions').innerHTML = template
 }
 export default class QuestionsController {

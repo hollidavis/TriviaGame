@@ -10,23 +10,12 @@ export default class Question {
     }
   }
   get Template() {
-    return /*html*/`
-    <div class="col-md-6">
-      <div class="card">
-        <div class="card-header text-center">
-          <h2>${this.question}</h2>
-        </div>
-        <div class="card-body d-flex flex-column">
-          ${this.MyAnswers}
-        </div>
-      </div>
-    </div>`
-  }
-
-  get MyAnswers() {
-    let template = ''
-    return /*html*/`
-      <button type="button" name="" id="" class="btn btn-primary my-2" btn-lg btn-block">${this.answers}</button>
-    `
+    let template = `<div class="col text-center"><h2 class= "my-3">${this.question}<h2></div>
+    <div class = "col-md-6 d-flex justify-content-around">`
+    this.answers.forEach(a => {
+      template += `<button type="button" class="btn btn-primary">${a}</button>`
+    })
+    template += `</div>`
+    return template
   }
 }
