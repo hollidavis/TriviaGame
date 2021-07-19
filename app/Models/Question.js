@@ -13,7 +13,7 @@ export default class Question {
     let template = `<div class="col text-center"><h2 class= "my-3">${this.question}<h2></div>
     <div class = "col-md-6 d-flex justify-content-around">`
     this.answers.forEach(a => {
-      template += `<button type="button" class="btn btn-primary">${a}</button>`
+      template += `<button type="button" class="btn btn-primary" onclick="app.questionsController.choose('${a}')">${a}</button>`
     })
     template += `</div>`
     return template
